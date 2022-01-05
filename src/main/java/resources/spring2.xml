@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+<bean id="emp" class="com.chainsys.demo.Employee">
+
+
+<property name="empNameLinkedList">
+<util:list list-class="java.util.LinkedList">
+<ref bean="dept"></ref>
+<ref bean="dept1"></ref>
+<ref bean="dept2"></ref>
+</util:list>
+</property>
+
+<property name="hashMap">
+
+<util:map map-class="java.util.HashMap">
+
+<entry key="Test" value-ref="dept"></entry>
+
+</util:map>
+
+</property>
+
+<property name="empNameLinkedList1">
+<util:list list-class="java.util.LinkedList">
+<ref bean="dept1"></ref>
+<ref bean="dept2"></ref>
+</util:list>
+</property>
+
+
+
+<property name="hashMap1">
+<util:map map-class="java.util.HashMap">
+<entry key="Jey" value-ref="dept"></entry>
+<entry key="Test1" value-ref="dept1"></entry>
+</util:map>
+</property>
+
+
+<constructor-arg value="Jey" index="0" ></constructor-arg>
+<constructor-arg value="Test@gmail.com" index="2"></constructor-arg>
+<constructor-arg value="10" index="1" type="int"></constructor-arg>
+</bean>
+ <bean id="dept" class="com.chainsys.demo.Department">
+<property name="deptId" value="10"></property>
+<property name="deptName" value="IT"></property>
+</bean>
+<bean id="dept1" class="com.chainsys.demo.Department">
+<property name="deptId" value="20"></property>
+<property name="deptName" value="HR"></property>
+</bean>
+<bean id="dept2" class="com.chainsys.demo.Department">
+<property name="deptId" value="30"></property>
+<property name="deptName" value="Network"></property>
+</bean>
+</beans>

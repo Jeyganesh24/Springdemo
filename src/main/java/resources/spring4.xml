@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+<bean id="init" class="com.chainsys.demo.InitDestroyBean">
+
+<constructor-arg value="Jey"></constructor-arg>
+<property name="id" value="20"></property>
+</bean>
+<bean id="post" class="com.chainsys.demo.BeanPostProcess"></bean>
+</beans>
